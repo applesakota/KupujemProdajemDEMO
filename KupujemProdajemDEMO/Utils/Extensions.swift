@@ -21,33 +21,6 @@ extension UIStoryboard {
     }
 }
 
-// MARK: - Data
-extension Data {
-    
-    /// Convert data to NSDictionary object.
-    /// - Returns: NSDictionary instance.
-    func toDictionary() -> NSDictionary? {
-        do {
-            return try JSONSerialization.jsonObject(with: self, options: .mutableContainers) as? NSDictionary
-        } catch let error as NSError {
-            print("Failed to serilize: \(error.localizedDescription)")
-            return nil
-        }
-    }
-    
-    /// Convert data to NSDictionary array object.
-    /// - Returns: NSDictionary array instance.
-    func toDictionaries() -> [NSDictionary]? {
-        do {
-            return try JSONSerialization.jsonObject(with: self, options: .mutableContainers) as? [NSDictionary]
-        } catch let error as NSError {
-            print("Failed to serilize: \(error.localizedDescription)")
-            return nil
-        }
-    }
-    
-}
-
 //MARK: - String
 
 extension String {
